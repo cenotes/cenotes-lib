@@ -1,0 +1,14 @@
+env:
+  matrix:
+    - TOXENV=py
+    - TOXENV=flake8
+install:
+  - pip install -U tox
+language:
+  - python
+python:
+  - 3.4
+  - 3.5
+  - 3.6
+script:
+  - tox -e ${TOXENV}
