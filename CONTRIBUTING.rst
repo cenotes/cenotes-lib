@@ -38,8 +38,8 @@ and "help wanted" is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-Cenotes CLI could always use more documentation, whether as part of the
-official Cenotes CLI docs, in docstrings, or even on the web in blog posts,
+Cenotes lib could always use more documentation, whether as part of the
+official Cenotes lib docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
 Submit Feedback

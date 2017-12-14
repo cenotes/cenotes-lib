@@ -1,12 +1,10 @@
-CENotes library and CLI
-=======================
+CENotes lib package
+===================
 
 .. image:: https://travis-ci.org/cenotes/cenotes-lib.svg?branch=master
     :target: https://travis-ci.org/cenotes/cenotes-lib
 
-**C(ryptographical) E(xpendable) Notes**
-
-**Libraries and Command Line Interface**
+**C(ryptographical) E(xpendable) Notes library**
 
 -  Free software: GNU General Public License v3
 
@@ -25,7 +23,7 @@ CENotes library and CLI
 What is this?
 -------------
 
-This is a **cli and library** project to support encryption/decryption
+This is a **library** project to support encryption/decryption
 of expendable notes
 
 An example of a backend that uses the libraries provided here can be
@@ -34,7 +32,7 @@ found at https://cenot.es
 What this isn’t
 ---------------
 
-UI/Frontend/Backend. This is a **cli/library** project. Frontend and
+UI/Frontend/Backend/CLI. This is a **library** project. Frontend and
 backend solutions are different projects. The reason for this is to
 allow flexibility in frontend / backend choice and to avoid huge bundle
 projects.
@@ -44,13 +42,16 @@ projects.
 -  A **frontend** project that communicates with the **backend** can be
    found `here <https://github.com/cenotes/cenotes-reaction>`__
 
+-  A **cli** project that uses these libraries can be found
+`here <https://github.com/cenotes/cenotes-cli>`__
+
 Features
 --------
 
 -  Symmetric encryption of notes using the `pynacl`_ project
 
-How does this work?
--------------------
+How does cenotes work?
+----------------------
 
 See `design`_
 
