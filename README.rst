@@ -43,7 +43,7 @@ projects.
    found `here <https://github.com/cenotes/cenotes-reaction>`__
 
 -  A **cli** project that uses these libraries can be found
-`here <https://github.com/cenotes/cenotes-cli>`__
+   `here <https://github.com/cenotes/cenotes-cli>`__
 
 Features
 --------
@@ -63,13 +63,9 @@ How to use
 
 Installing the python package
 
-  -  Ideally inside a virtualenv
+-  Ideally inside a virtualenv: ``pip install cenotes-lib``
 
-     -  ``pip install cenotes-lib``
-
-  - Then in your project
-
-     - ``import cenotes_lib``
+- Then in your project: ``import cenotes_lib``
 
 
 .. _Backend & Frontend Demo: https://cenot.es
