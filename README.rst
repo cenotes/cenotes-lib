@@ -66,7 +66,9 @@ Installing the python package
   -  Ideally inside a virtualenv
 
      -  ``pip install cenotes-lib``
+
   - Then in your project
+
      - ``import cenotes_lib``
 
 
