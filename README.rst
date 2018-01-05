@@ -29,7 +29,7 @@ of expendable notes
 An example of a backend that uses the libraries provided here can be
 found at https://cenot.es
 
-What this isn’t
+What this isn't
 ---------------
 
 UI/Frontend/Backend/CLI. This is a **library** project. Frontend and
