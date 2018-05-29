@@ -1,0 +1,6 @@
+-i https://pypi.python.org/simple
+cffi==1.11.5
+click==6.7
+pycparser==2.18
+pynacl==1.2.1
+six==1.11.0
