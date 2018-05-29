@@ -106,10 +106,10 @@ def test_encrypt_note():
 
 
 def test_encrypt_note_empty_text():
-    text1 = ""
+    text = ""
     password = "1"
-    with pytest.raises(exceptions.InvalidUsage):
-        crypto.encrypt_note(text1, password)
+    payload, key = crypto.encrypt_note(text, password)
+    assert_decrypt(payload, key, text)
 
 
 def test_encrypt_note_empty_password():

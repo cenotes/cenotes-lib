@@ -76,9 +76,6 @@ def decrypt_with_key(what, key):
 
 
 def encrypt_note(note, password=None):
-    if not note:
-        raise InvalidUsage("Note payload cannot be empty")
-
     password = (password or "").encode() or generate_random_chars()
 
     ciphertext, key = encrypt_with_password(note, password)
