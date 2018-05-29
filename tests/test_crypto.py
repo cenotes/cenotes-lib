@@ -146,3 +146,12 @@ def test_encrypt_with_unsupported_algorithm():
 def test_encrypt_with_unsupported_algorithm_options():
     with pytest.raises(exceptions.InvalidUsage):
         crypto.encrypt_note_with_params("test", "123", "scrypt", "invalid")
+
+
+def test_decrypt_note_with_formatting():
+    text1 = ("test me\n"
+             "with extra lines\n"
+             "and a few more\n")
+    password = "1"
+    payload, key = crypto.encrypt_note(text1, password)
+    assert_decrypt(payload, key, text1)

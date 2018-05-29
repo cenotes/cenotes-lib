@@ -1,4 +1,5 @@
 import base64
+import timeit
 from itertools import product
 from nacl import utils as nacl_utils, secret, pwhash
 from .exceptions import InvalidUsage
@@ -141,3 +142,17 @@ def encrypt_note_with_params(note, password, algorithm, hardness):
 @safe_decryption
 def decrypt_note(payload, key):
     return decrypt_with_key(*map(url_safe_decode, (payload, key)))
+
+
+def benchmark_algorithms():
+    def measure(*args):
+        return timeit.timeit("crypto.craft_key_from_password('lalal', "
+                             "crypto.craft_kdf_params('{0}', '{1}'))"
+                             .format(*args),
+                             setup="from cenotes_lib import crypto", number=1)
+
+    algorithm_combinations = (pair for combinations in
+                              (product([x[0]], x[1].get("hardness").keys())
+                               for x in SUPPORTED_ALGORITHM_PARAMS.items())
+                              for pair in combinations)
+    return map(lambda x: (x, measure(*x)), algorithm_combinations)
