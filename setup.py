@@ -27,7 +27,7 @@ test_requirements = [
 
 setup(
     name='cenotes_lib',
-    version='0.2.0',
+    version='0.2.1',
     description="Cenotes libraries",
     long_description=readme + '\n\n' + history,
     author="John Paraskevopoulos",
