@@ -7,8 +7,7 @@ from cenotes_lib import exceptions, crypto
 
 
 def assert_decrypt(payload, key, plaintext):
-    assert (crypto.decrypt_with_key(
-        payload, crypto.url_safe_decode(key)).decode() == plaintext)
+    assert crypto.decrypt_note(payload, key).decode() == plaintext
 
 
 def test_craft_key():
@@ -122,13 +121,13 @@ def test_decrypt_note():
     text1 = "test me"
     password = "1"
     payload, key = crypto.encrypt_note(text1, password)
-    assert text1 == crypto.decrypt_note(payload, key).decode()
+    assert_decrypt(payload, key, text1)
 
 
 def test_decrypt_note_empty_password():
     text1 = "test me"
     payload, key = crypto.encrypt_note(text1)
-    assert text1 == crypto.decrypt_note(payload, key).decode()
+    assert_decrypt(payload, key, text1)
 
 
 def test_decrypt_note_wrong_pass():
@@ -137,3 +136,13 @@ def test_decrypt_note_wrong_pass():
     payload, key = crypto.encrypt_note(text1, password)
     with pytest.raises(exceptions.CenotesError):
         crypto.decrypt_note(payload, "wrong?")
+
+
+def test_encrypt_with_unsupported_algorithm():
+    with pytest.raises(exceptions.InvalidUsage):
+        crypto.encrypt_note_with_params("test", "123", "crazy_alg", "min")
+
+
+def test_encrypt_with_unsupported_algorithm_options():
+    with pytest.raises(exceptions.InvalidUsage):
+        crypto.encrypt_note_with_params("test", "123", "scrypt", "invalid")
