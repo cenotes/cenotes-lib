@@ -1,6 +1,10 @@
 =======
 History
 =======
+0.2.3 (2018-09-18)
+------------------
+
+* Fix bug when encrypting with encryption options
 
 0.2.2 (2018-05-29)
 ------------------
