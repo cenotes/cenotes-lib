@@ -148,6 +148,13 @@ def test_encrypt_with_unsupported_algorithm_options():
         crypto.encrypt_note_with_params("test", "123", "scrypt", "invalid")
 
 
+def test_encrypt_with_params():
+    text = "test123"
+    payload, key = crypto.encrypt_note_with_params(text, "123", "scrypt",
+                                                   "min")
+    assert_decrypt(payload, key, text)
+
+
 def test_decrypt_note_with_formatting():
     text1 = ("test me\n"
              "with extra lines\n"

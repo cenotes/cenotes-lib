@@ -129,11 +129,9 @@ def encrypt_note(note, password=None):
 
 
 def encrypt_note_with_params(note, password, algorithm, hardness):
-    ciphertext, key = encrypt_with_key(
-        note,
-        craft_key_from_password(
-            password, craft_kdf_params(algorithm, hardness))
-    )
+    key = craft_key_from_password(password,
+                                  craft_kdf_params(algorithm, hardness))
+    ciphertext = encrypt_with_key(note, key)
 
     # needs to be url safe so we can share it around
     return map(url_safe_encode, (ciphertext, key))
