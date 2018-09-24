@@ -17,6 +17,7 @@ requirements = [
 ]
 
 setup_requirements = [
+    "pytest-runner"
 ]
 
 test_requirements = [
@@ -33,7 +34,7 @@ setup(
     author="John Paraskevopoulos",
     author_email='ioparaskev@gmail.com',
     url='https://github.com/cenotes/cenotes-lib',
-    packages=find_packages(exclude=['contrib', 'docs', 'tests']),
+    packages=find_packages(exclude=['docs']),
     include_package_data=True,
     install_requires=requirements,
     license="GNU General Public License v3",
